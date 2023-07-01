@@ -9,13 +9,13 @@ import { AdminTokenApiModel } from '../Models/admin-token-api.model';
 })
 export class AdminauthService {
 
-  private baseUrl: string = 'https://localhost:7190/api/Owner/';
+  private baseUrl: string = 'https://localhost:7254/api/Admin/';
   private userPayload:any;
   constructor(private http: HttpClient, private router: Router) {
    }
 
   signUp(userObj: any) {
-    return this.http.post<any>(`${this.baseUrl}register`, userObj)
+    return this.http.post<any>(`https://localhost:7254/api/Doctor/register`, userObj)
   }
 
   signIn(loginObj : any){

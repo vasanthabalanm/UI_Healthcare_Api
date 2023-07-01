@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminapiService {
 
-  private baseUrl: string = 'https://localhost:7190/api/Owner';
+  private baseUrl: string = 'https://localhost:7254/api/Admin';
   constructor(private http: HttpClient) {}
 
   getUsers() {
