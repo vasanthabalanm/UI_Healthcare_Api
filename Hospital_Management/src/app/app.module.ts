@@ -12,6 +12,10 @@ import { DoctorsignupComponent } from './Components/doctorsignup/doctorsignup.co
 import { AdmindoctordashboardComponent } from './Components/admindoctordashboard/admindoctordashboard.component';
 import {PatientRoutingModule} from '../app/Components/patient-home/patient-routing.module'
 import {AdmindoctorRoutingModule} from '../app/Components/admindoctor-login/admindoctor-routing.module'
+import { NgToastModule } from 'ng-angular-popup';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import {AdmindoctorRoutingModule} from '../app/Components/admindoctor-login/admi
     BrowserModule,
     AppRoutingModule,
     PatientRoutingModule,
-    AdmindoctorRoutingModule
+    AdmindoctorRoutingModule,
+    NgToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
