@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <div class="dark">
+        <div class="combine">
+            <div class="logos">
+                <a [routerLink]="['']"> <img src="../../../assets/images/logo.png" class="logo"></a>
+            </div>
+            <div>
+                <p class="logo-title">HOSPITAL</p>
+            </div>
+
+            <nav class="navs">
+                <ul>
+                    <li> <a href="#" class="px-3 py-1">Home</a> </li>
+                    <li> <a href="#" class="px-3 py-1">About</a> </li>
+                    <li> <a href="#" class="px-3 py-1">Find Doctor</a></li>
+                    <li> <a href="#" class="px-3 py-1">Find Medicals</a></li>
+                    <li> <a href="#" class="px-3 py-1">Contact-us</a></li>
+                </ul>
+            </nav>
+            <div class="renderbutton">
+                <a class="px-4 py-1 login" [routerLink]="['patientlogin']">Login</a> &nbsp;
+                <a class="px-4 py-1 signup" [routerLink]="['patientsignup']">Sign-up</a>
+            </div>
+            
+        </div>
+
+        <div class="box1">
+            <p class=" px-4 pt-3 main-head">"Your wellness journey begins here.<br><span class="welcome">Welcome!</span>" </p>
+            <p class="px-4 sub-head">Essential institutions providing medical care, treatment, and support. Equipped with advanced technology and dedicated healthcare professionals, hospitals promote health and save lives in a healing environment.</p>
+            <div class="px-4">
+                <a class="px-4 py-2 read" >Read more...</a> &nbsp;
+                <a class="px-4 py-2 extra">Departments</a>
+            </div>
+        </div>
+
+        <div class="box-combine position-absolute">
+            <div class="box2">
+                <img src="../../../assets/images/make_appointment.png" class="make-appointment">
+                <p class="make-text pt-3">Make an Appointmnet</p>
+            </div>
+            <div class="box3 ">
+                <div class="fourandfive justify-content-evenly pt-5">
+                    <div class="box4"><p class="steps1 px-2 py-2"><span class="steps">STEP 1:</span> Create an Account</p></div>
+                    <div class="box5"><p class="steps1 px-2 py-2"><span class="steps">STEP 2:</span> Select Specialization Department</p></div>
+                    <div class="box8 sendapoint position-absolute">
+                        <img src="../../../assets/images/Middlesend.png" class="loginimg">
+                    </div> 
+                    
+                </div>
+                <div class="sixandseven  justify-content-evenly pt-4 ">
+                    <div class="box6"><p class="steps1 px-2 py-2"><span class="steps">STEP 3:</span> FillDetails and make Appointment</p></div>
+                    <div class="box7"><p class="steps1 px-2 py-2"><span class="steps">STEP 4:</span> We have Online Consultant 24/7*</p></div>
+                </div>
+            </div> 
+                         
+        </div>
+    </div>   
+    <section class="position-relative section1 container">
+
+        <div class="row "><h3 class=" sect1 py-5">our best doctors<hr></h3></div>
+        
+        <div class="row px-5">
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/brain.png" class="card-img-top pt-3 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center">Brain</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/liver.png" class="card-img-top pt-5 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center pt-1">Liver</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/cough.png" class="card-img-top pt-3 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center">Fever</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/fever.png" class="card-img-top pt-3 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center">HeadAche</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/viral.png" class="card-img-top pt-3 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center">Infection</p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 7rem;  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/stomach.png" class="card-img-top pt-3 ">
+                    <div class="card-body bg-body-tertiary">
+                      <p class="card-text text-center">Stomach</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="pt-5 text-center">
+            <a class="px-4 py-1 signup">See all Specialist</a>
+
+        </div>
+    </section>
+
+    <section class="section2 ">
+        <div class="combine">
+            <div class="box9">
+                <img src="../../../assets/images/nearestdoctor.png" class="nearestdoctorimg">
+            </div>
+            <div class="content2">
+                <p class="px-5 sec2subhead1">Your Nearest Doctor</p>
+                <p class="px-5 sec2subhead2">Select prefered doctor and time slots  to book an in clinic or video consulting . Its very easy and simple process to booking. <br>Find a medical professional within close proximity, taking into account their specialty and availability. Provide contact information for the doctor's office or clinic. Time is of the essence, so please expedite the search. <br> <br> <a href="" class="px-4 py-2 finddoctor"> Find Doctor Now</a> </p>
+            </div>
+        </div>
+    </section>
+    <section class="section3 container pt-5">
+        <div class="row "><h3 class=" sect1 py-5">Medical department<hr></h3></div>
+
+        <div class="row px-5">
+            <div class="col">
+                <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/cardiology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Cardiology</h5>
+                      <p>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExamples" aria-expanded="false" aria-controls="collapseWidthExample" style="font-size: 13px; margin-left: 20px;margin-top: 12px;">
+                          Read more
+                        </button>
+                      </p>
+                      <div>
+                        <div class="collapse collapse-horizontal" id="collapseWidthExamples">
+                          <div class="card card-body" style="width: 130px;">
+                            <p style="font-size: 12px;">Study and treatment of heart disorders, including diagnosis, prevention, and management.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/radiology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Radiology</h5>
+                      <p>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExamp" aria-expanded="false" aria-controls="collapseWidthExample" style="font-size: 13px; margin-left: 20px;margin-top: 12px;">
+                          Read more
+                        </button>
+                      </p>
+                      <div>
+                        <div class="collapse collapse-horizontal" id="collapseWidthExamp">
+                          <div class="card card-body" style="width: 130px;">
+                            <p style="font-size: 12px;">Medical specialty that uses imaging technology to diagnose and treat various diseases and conditions.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/darmatology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Darmatology</h5>
+                      <p>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidth" aria-expanded="false" aria-controls="collapseWidthExample" style="font-size: 13px; margin-left: 20px;margin-top: 12px;">
+                          Read more
+                        </button>
+                      </p>
+                      <div>
+                        <div class="collapse collapse-horizontal" id="collapseWidth">
+                          <div class="card card-body" style="width: 130px;">
+                            <p style="font-size: 12px;">Medical specialty focused on diagnosing and treating disorders related to the skin, hair, and nails.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/cardiology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Cardiology</h5>
+                      <p>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthEx" aria-expanded="false" aria-controls="collapseWidthExample" style="font-size: 13px; margin-left: 20px;margin-top: 12px;">
+                          Read more
+                        </button>
+                      </p>
+                      <div>
+                        <div class="collapse collapse-horizontal" id="collapseWidthEx">
+                          <div class="card card-body" style="width: 130px;">
+                            <p style="font-size: 12px;">Medical specialty specializing in the study, diagnosis, and treatment of heart diseases and conditions.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                    <img src="../../../assets/images/pulmonology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Pulmonology</h5>
+                      <p>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collaps" aria-expanded="false" aria-controls="collapseWidthExample" style="font-size: 13px; margin-left: 20px;margin-top: 12px;">
+                          Read more
+                        </button>
+                      </p>
+                      <div>
+                        <div class="collapse collapse-horizontal" id="collaps">
+                          <div class="card card-body" style="width: 130px;">
+                            <p style="font-size: 12px;">Medical specialty that deals with the diagnosis and treatment of diseases and disorders of the respiratory system.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section4 container pt-5">
+        <div class="row "><h3 class=" text-center py-5">What Our Client Say<hr></h3></div>
+        <div class="row px-5">
+            <div class="col">
+                <div class="card bg-light" style="width: 30rem;">
+                    <p class="text-center pt-3"><img src="../../../assets/images/feeback.png" class="card-img-top" style="width: 70px;height: 70px;"></p>
+                    <div class="card-body">
+                      <p class="card-text" style="font-size: 14px;">"The hospital management should ensure that there is an appropriate and efficient staffing system in place. This includes having the right number of qualified healthcare professionals available at all times to provide quality care to patients."</p>
+                    </div>
+                    <h5 class="card-title text-center ">SURIYA.M</h5>
+                    <h6 class="card-title text-center text-primary">Chennai</h6>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-light" style="width: 30rem;">
+                    <p class="text-center pt-3"><img src="../../../assets/images/feeback.png" class="card-img-top" style="width: 70px;height: 70px;"></p>
+                    <div class="card-body">
+                      <p class="card-text" style="font-size: 14px;">"Efficient allocation of resources, including medical equipment, supplies, and personnel, is essential for effective hospital management. Regular assessment of resource needs and careful planning can help prevent shortages and ensure optimal utilization."</p>
+                    </div>
+                    <h5 class="card-title text-center ">KISHOREKUMAR.B</h5>
+                    <h6 class="card-title text-center text-primary">Pollachi</h6>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container pt-5">
+        <div class="row "><h3 class=" sect1 py-5">our Facilities<hr></h3></div>
+
+        <div class="row pt-4 px-5">
+            <div class="col ">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/ambulance.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">24/7 Ambulance</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">Ambulance services respond promptly to emergency calls, 24/7, dispatching the nearest available ambulance.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/Food.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">Food & Delivery</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">Provides meals and brings them to patients' rooms for convenience and nourishment.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/cot.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">Bed Cots</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">The hospital has a 500-bed facility available to accommodate patients requiring medical care.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row py-5 px-5">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/Worship.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">Place of Worship</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">Hospital chapel or prayer room for patients and staff to practice their faith or seek solace.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/nurse.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">Specia Nurse</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">Highly skilled and specialized nurse with expertise in a specific area of healthcare.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="fac1">
+                        <div class="facl1 bg-light px-2">
+                            <img src="../../../assets/images/payment.png" class="card-img-top" style="width: 60px;height: 60px;margin-top: 50px;">
+                        </div>
+                        <div class="faclt1">
+                            <div class="card-body py-4">
+                                <h5 class="card-title">Digital Payment</h5>
+                                <p class="card-text" style="font-size: 14px;color: gray;">Credit/debit cards, cash, insurance, installment plans, and online payment options are typically accepted.</p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footers" class="bg-dark">
+        <div class="foter">
+          <div class="container fotr ">
+            <div class="row py-5">
+              <div class="col-1"></div>
+              <div class="col"><strong style="text-decoration: underline;">About</strong><br><br>
+                <a href="">About Us</a><br>
+                <a href="">Hospital</a><br>
+                <a href="">Team Members</a><br>
+                <a href="">Offers</a><br>
+                <a href="">Help Group</a><br>
+              </div>
+              <div class="col"><strong style="text-decoration: underline;">Service</strong><br><br>
+                <a href="">Appointment Booking</a><br>
+                <a href="">Online Booking</a><br>
+                <a href="">Policy Agree</a><br>
+                <a href="">Breakage</a><br>
+                <a href="">Charity Policy</a><br>
+              </div>
+              <div class="col"><strong style="text-decoration: underline;">Quick Links</strong><br><br>
+                <a href="">Medical & Services</a><br>
+                <a href="">Forthcomming Offers</a><br>
+                <a href="">Online Booking</a><br>
+                <a href="">Security Policy</a><br>
+              </div>
+              <div class="col"><strong style="text-decoration: underline;">Address</strong><br><br>
+                <a ><img src="../../../assets/images/logo_icons/map.png" class="px-2"  >Sivagangai-630441</a><br>
+                <a ><img src="../../../assets/images/logo_icons/phone.png" class="px-2" >9876123490</a><br>
+                <a ><img src="../../../assets/images/logo_icons/mail.png" class="px-2" >admin12@gmail.com</a><br>
+              </div>
+            </div>
+            <hr>
+            
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
