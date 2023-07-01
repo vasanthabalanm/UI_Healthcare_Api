@@ -279,6 +279,9 @@ nav {
     .copyryt{
         font-size: 12px;
     }
+    .footercombine{
+        display: flex;
+    }
 }
 
 
