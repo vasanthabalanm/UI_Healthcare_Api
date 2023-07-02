@@ -16,7 +16,7 @@ export class DoctorsignupComponent implements OnInit {
   type: string = 'password';
   isText: boolean = false;
   eyeIcon:string = "fa-eye-slash"
-  constructor(private fb : FormBuilder, private auth: AdminauthService, private router: Router,private toast: NgToastService,
+  constructor(private fb : FormBuilder, private auth: AdminauthService, private router: Router
     ) { }
 
   ngOnInit() {
@@ -25,7 +25,10 @@ export class DoctorsignupComponent implements OnInit {
       lastName:['', Validators.required],
       userName:['', Validators.required],
       email:['', Validators.required],
-      password:['', Validators.required]
+      password:['', Validators.required],
+      specialization: ['', Validators.required], 
+      phone: ['', Validators.required], 
+      experience: ['', Validators.required]
     })
   }
 
@@ -48,9 +51,7 @@ export class DoctorsignupComponent implements OnInit {
         next:(res=>{
           console.log(res.message);
           this.signUpForm.reset();
-          this.router.navigate(['login']);
-          // this.toast.success({detail:"Registerd Successfully", summary:res.message, duration: 1000});
-
+          this.router.navigate(['admin']);
           alert(res.message)
         }),
         error:(err=>{

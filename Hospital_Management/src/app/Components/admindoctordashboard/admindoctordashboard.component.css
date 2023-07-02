@@ -1,0 +1,89 @@
+.combine{
+    display: flex;
+    background-color: #0392ce;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+
+}
+.logo-title{
+    margin-top: 20px;
+    font-weight: bolder;
+    color: white;
+    margin-left: 5px;
+}
+.renderbutton{
+    margin-top: 20px;
+    position: absolute;
+    right: 10px;
+}
+.logout{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 4px;
+    border-radius: 9px;
+    font-weight: 500;
+}
+.logout:hover{
+    color: white;
+    background-color: black;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+  }
+  
+  .custom-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .custom-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .custom-table tr:hover {
+    background-color: #e6e6e6;
+  }
+
+  
+.pnd:hover{
+    color: white;
+    background-color: black;
+}
+.act:hover{
+    color: white;
+    background-color: black;
+}
+.checks{
+    background-color: green;
+    color: white;
+    font-size: 20px;
+}
+.deletes{
+    background-color: red;
+    color: white;
+    font-size: 20px;
+}
+.checks:hover{
+    color: green;
+    background-color: white;
+}
+.deletes:hover{
+    background-color: white;
+    color: red;
+}
+.sidecontainer{
+    position: fixed;
+    overflow: hidden;
+}

@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'doctor',component:AdmindoctorLoginComponent},
   {path:'doctorsignup',component:DoctorsignupComponent},
   {path:'admindoctordashboard',component:AdmindoctordashboardComponent,canActivate:[adminauthGuard]}
+ 
 ];
 
 @NgModule({

@@ -1,10 +1,33 @@
-<section class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <img src="../../../assets/images/patientlogin.svg">
+<section class="container">
+    <div class="combine">
+        <div class="logos">
+            <a [routerLink]="['']"> <img src="../../../assets/images/logo.png" class="logo"></a>
         </div>
-        <div class="col">
-            
+        <div>
+            <p class="logo-title">HOSPITAL</p>
         </div>
     </div>
+    <div class="combine">
+        <div class="loginimage">
+            <img src="../../../assets/images/patientlogin.svg" style="width: 600px;height: 100%;">
+        </div>
+        <div class="loginform px-4">
+            <h3 class="pt-3 font-weight-bold">Login</h3>
+            <p class="loginsubhead">**Patients will have unique login credentials (username and password) to access their personal health information. This ensures privacy and confidentiality.</p>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-4">
+                <div class="form-group pt-3">
+                    <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"> <span class="fa fa-user p-2"></span> <input formControlName="username" type="text" placeholder="Username" required> </div>
+                </div>
+                <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required*</small>
+                <div class="form-group pt-3">
+                    <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"> <span class="fa fa-lock px-2"></span> <input formControlName="password" [type]="type" placeholder="Password"> <button type="button" (click)="hideShowPass()" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>                                    </div>
+                </div>
+                <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required*</small>
+                <div class="form-inline fr mt-4"> <a id="forgot" data-bs-toggle="modal" data-bs-target="#exampleModal" class="font-weight-bold">Forgot password?</a> </div>
+                <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                <div class="text-center pt-4 text-muted">Don't have an account? <a id="forgot" href="#" routerLink="/patientsignup">Sign up</a> </div>
+            </form>
+        </div>
+    </div>
+
 </section>

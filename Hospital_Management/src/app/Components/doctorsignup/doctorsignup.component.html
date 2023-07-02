@@ -1,5 +1,13 @@
 <div class="outer">
     <div class="container">
+        <div class="combine">
+            <div class="logos">
+                <a [routerLink]="['']"> <img src="../../../assets/images/logo.png" class="logo"></a>
+            </div>
+            <div>
+                <p class="logo-title px-2">HOSPITAL</p>
+            </div>
+        </div>
         <div class="row">
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
                 <div class="panel border bg-white">
@@ -28,9 +36,34 @@
                                 <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')"> <span class="fa fa-lock px-2"></span> <input formControlName="password" [type]="type" placeholder="Password"> <button (click)="hideShowPass()" type="button" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>                                    </div>
                             </div>
                             <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*Password is required*</small>
-  
+                            
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['phone'].dirty && signUpForm.hasError('required', 'phone')">
+                                    <span class="fa fa-phone p-2"></span>
+                                    <input formControlName="phone" type="text" placeholder="Phone">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['phone'].dirty && signUpForm.hasError('required', 'phone')" class="text-danger">*Phone is required*</small>
+                            
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['specialization'].dirty && signUpForm.hasError('required', 'specialization')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="specialization" type="text" placeholder="Specialization">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['specialization'].dirty && signUpForm.hasError('required', 'specialization')" class="text-danger">*Specialization is required*</small>
+                            
+                            
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['experience'].dirty && signUpForm.hasError('required', 'experience')">
+                                    <span class="fa fa-calendar p-2"></span>
+                                    <input formControlName="experience" type="text" placeholder="Experience">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['experience'].dirty && signUpForm.hasError('required', 'experience')" class="text-danger">*Experience is required*</small>
+                            
                             <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Signup</button>
-                            <div class="text-center pt-4 text-muted">Already have an account? <a id="forgot" routerLink="/login" href="#">Login</a> </div>
+                            <div class="text-center pt-4 text-muted">Already have an account? <a id="forgot" routerLink="/admin" href="#">Login</a> </div>
                         </form>
                     </div>
   
@@ -41,4 +74,9 @@
     <br>
     <br>
   </div>
+  
+      
+
+
+
   
