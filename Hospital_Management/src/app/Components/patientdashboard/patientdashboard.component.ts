@@ -18,23 +18,23 @@ export class PatientdashboardComponent implements OnInit {
 
   public users:any = [];
   public role!:string;
-   Specialization!: string;
    Doctors!:any[];
    public added:any[]=[];
    public Appointmentform!:FormGroup;
 
 
-  public fullName : string = "";
+  fullName! : string;
   constructor(private api : ApiService, private auth: AuthService, private userStore: PatientstoreService,private http: HttpClient,private formbuilder : FormBuilder,private toast:NgToastService,private router :Router) { }
 
   ngOnInit() : void {
+    // this.fullName = this.auth.getfullNameFromToken();
     // this.api.getUsers()
     // .subscribe(res=>{
     // this.Doctors = res;
     // });
     this.starttemplate();
 
-    this.userStore.getFullNameFromStore()
+    this.userStore.getRoleFromStore()
     .subscribe(val=>{
       const fullNameFromToken = this.auth.getfullNameFromToken();
       this.fullName = val || fullNameFromToken
@@ -75,8 +75,38 @@ export class PatientdashboardComponent implements OnInit {
       doctorId: [],
       phone:[],
       location: [],
-      gender: []
+      gender: [],
+      Problem:[],
+      date:[]
      });
+  }
+
+  suggestions: string[] = ['Brain','Cardiology', 'Dental', 'ENT', 'Neurology', 'Oncology', 'General Surgery', 'Obstetrics & Gynaecology', 'Opthamology', 'Plastic Surgery','Reproductive Medicine','Urology','Vascular Surgery','Dermatology'];
+  Specialization: string = '';
+  showSuggestions: boolean = false;
+
+  onInputChange() {
+    if (this.Specialization.length > 0 || this.Specialization.length ==0) {
+      this.showSuggestions = true;
+    } else {
+      this.showSuggestions = false;
+    }
+  }
+
+  selectAndFilterSuggestion(suggestion: string) {
+    this.Specialization = suggestion;
+    this.showSuggestions = false;
+  }
+
+  filterSuggestions() {
+    return this.suggestions.filter(suggestion =>
+      suggestion.toLowerCase().startsWith(this.Specialization.toLowerCase())
+    );
+  }
+  submit() {
+    // Handle form submission
+    console.log('Submitted specialty:', this.Specialization);
+    // Add your code to handle the form submission logic
   }
 
 }

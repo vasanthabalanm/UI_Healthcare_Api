@@ -12,7 +12,7 @@
             </div>
         </div>
         <main class="text-center mainheading">
-            <h2 class="text-white">Hi,{{fullName}}!</h2>
+            <h2 class="text-white" >Hi,{{fullName}}!</h2>
             <p class="text-light">"Welcome to hospital."</p>
         </main>
         <div class="py-4">
@@ -25,18 +25,20 @@
                     <form [formGroup]="Appointmentform" (ngSubmit)="addapoint()">
                         <div class="row px-5 pt-3">
                             <div class="col-11 px-4">
-                                <div class="row">
+                                <div class="row py-3">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Specialization" class="lable">  Specialization : </label> <br>
-                                            <input type="text" id="Specialization" class="form-control"
-                                                name="Specialization" formControlName="Specialization" placeholder="Enter the Specialization" data-toggle="tooltip" data-placement="bottom" title="if you dont know the specialization contact/search in below button!">
-                                        </div>
-                                        <!-- <div class="form-group">
                                             <label for="doctorId" class="lable">  DoctorId : </label> <br>
                                             <input type="text" id="doctorId" class="form-control"
                                                 name="doctorId" formControlName="doctorId" placeholder="Enter Doctor Id" data-toggle="tooltip" data-placement="bottom" title="if you dont know id, kindly check the specialization search in below button!">
-                                        </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="Date" class="lable">  Date : </label> <br>
+                                            <input type="date" id="Date" class="form-control"
+                                                name="Date" formControlName="Date" placeholder="Enter the appointment date" >
+                                        </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
@@ -45,8 +47,10 @@
                                                 name="phone" formControlName="phone" placeholder="+91">
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="row py-3">
+    
+                                <div class="row ">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="location" class="lable">Location : </label>
@@ -61,6 +65,14 @@
                                                 name="gender" formControlName="gender" placeholder="Enter your Gender">
                                         </div>
                                     </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="Problem" class="lable">Problem : </label>
+                                            <input type="text" id="Problem" class="form-control"
+                                                name="Problem" formControlName="Problem" placeholder="Enter your Problem">
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                     
                             </div>
@@ -78,19 +90,23 @@
             </div>
         </div>
     </div>
-    <section class="section1 container " id="finddoctor">
+    <section class="section1 container bg-light " id="finddoctor">
         <div class="row "><h3 class=" sect1 py-5">Fetch Our Specialization Doctors.<hr></h3></div>
 
-        <div class="combine">
+        <div class="combine py-3">
             <div class="box9">
                 <img src="../../../assets/images/nearestdoctor.png" class="nearestdoctorimg">
             </div>
+
             <div>                
                 <form class="px-5 ">
                     <label for="Specialization" class="namespc py-4">Specialization:</label><br>
-                    <input type="text" [(ngModel)]="Specialization" name="Specialization" id="Specialization"
-                        class="inp">
+                    <input type="text" [(ngModel)]="Specialization" (input)="onInputChange()" placeholder="Enter a specialty" class="inp" name="Specialization" id="Specialization">
+                    <ul *ngIf="showSuggestions">
+                        <li *ngFor="let suggestion of filterSuggestions()" (click)="selectAndFilterSuggestion(suggestion)">{{ suggestion }}</li>
+                    </ul>
                     <button type="button" (click)="search()" class="button">Search</button>
+
                 </form>
             </div>
             <div >
@@ -120,11 +136,57 @@
         </div>
     </section>
 
+    <section class="container py-5 ">
+        <div class="row "><h3 class=" sect1 py-5"> Preference Doctors.<hr></h3></div>
+        <div class=" px-5  ">
+            <div class="row justify-content-around ">
+                <div class="col-sm-5 col-md-3">
+                    <div class="card" style="width: 13rem;">
+                        <p class="text-center pt-4"><img src="../../../assets/images/book1.png" class="card-img-top cardimges" alt="Card Image"></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Doctor1</h5>
+                            <p class="card-text"></p>
+                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-3">
+                    <div class="card" style="width: 13rem;">
+                        <p class="text-center pt-4"><img src="../../../assets/images/book2.png" class="card-img-top cardimges" alt="Card Image"></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Doctor1</h5>
+                            <p class="card-text"></p>
+                            <p class="text-center"><a href="#" class="btn btn-dark ">Book Appointment</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-3">
+                    <div class="card" style="width: 13rem;">
+                        <p class="text-center pt-4"><img src="../../../assets/images/book3.png" class="card-img-top cardimges" alt="Card Image"></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Doctor1</h5>
+                            <p class="card-text"></p>
+                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                        </div>
+                    </div>
+                </div><div class="col-sm-5 col-md-3">
+                    <div class="card" style="width: 13rem;">
+                        <p class="text-center pt-4"><img src="../../../assets/images/book4.jpg" class="card-img-top cardimges" alt="Card Image"></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Doctor1</h5>
+                            <p class="card-text"></p>
+                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section >
 
-    <section class="section3 container pt-5" id="about">
-        <div class="row "><h3 class=" sect1 py-5">Medical Department<hr></h3></div>
 
-        <div class="row px-5">
+    <section class="section3 container bg-light " id="about">
+        <div class="row "><h3 class=" sect1 pt-4">Medical Department<hr></h3></div>
+        <div class="row px-5 py-5">
             <div class="col">
                 <div class="card" style="width: 10rem;box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
                     <img src="../../../assets/images/cardiology.png" class="card-img-top"  style="width: 60px; height: 60px;margin-left: 50px; margin-top: 30px;">

@@ -9,11 +9,11 @@
     </div>
     <div class="combine">
         <div class="loginimage">
-            <img src="../../../assets/images/patientlogin.svg" style="width: 600px;height: 100%;">
+            <img src="../../../assets/images/patlogin1.avif" style="width: 600px;height: 100%;">
         </div>
-        <div class="loginform px-4">
+        <div class="loginform px-3">
             <h3 class="pt-3 font-weight-bold">Login</h3>
-            <p class="loginsubhead">**Patients will have unique login credentials (username and password) to access their personal health information. This ensures privacy and confidentiality.</p>
+            <p class="loginsubhead px-3">**Patients will have unique login credentials (username and password) to access their personal health information. This ensures privacy and confidentiality.</p>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-4">
                 <div class="form-group pt-3">
                     <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"> <span class="fa fa-user p-2"></span> <input formControlName="username" type="text" placeholder="Username" required> </div>

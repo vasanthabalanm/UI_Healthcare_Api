@@ -9,9 +9,9 @@
     </div>
     <div class="combine">
         
-        <div class="loginform px-4">
+        <div class="loginform px-3">
             <h3 class="pt-3 font-weight-bold">Login</h3>
-            <p class="loginsubhead">**Doctors will have unique login credentials (username and password) to access their personal and other Doctor information. This ensures privacy and confidentiality.</p>
+            <p class="loginsubhead px-4">**Doctors will have unique login credentials (username and password) to access their personal and other Doctor information. This ensures privacy and confidentiality.</p>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-5">
                 <div class="form-group pt-3">
                     <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"> <span class="fa fa-user p-2"></span> <input formControlName="username" type="text" placeholder="Username" required> </div>

@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <div class="row">
         <!-- <ng-container *ngIf="role === 'Admin'"> -->
-        <ng-container *ngIf="role === 'Admin'" class="sidecontainer">
+        <ng-container class="sidecontainer position-static" >
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <div class="pt-3">
@@ -38,64 +38,16 @@
         </ng-container>
   
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand">
-                    <div class=""></div>
-                </div>
-                <div class="chartjs-size-monitor-shrink">
-                    <div class=""></div>
-                </div>
-            </div>
+            
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Hi,{{fullName}}Dashboard</h1>
             </div>
             
-            <!-- <div class="combine">
-                <div class="py-3">
-                    <div class="card" style="width: 15rem;">
-                        <img src="../../../assets/images/doctoradmin.svg" class="card-img-top px-2 py-2" style="width: 170px;height:150px;">
-                        <div class="card-body text-center">
-                        <a href="#" class="btn btn-primary text-center px-4 act">Active</a>
-                        </div>
-                    </div>
-                </div>
-                <div>                
-                    <form class="px-5 ">
-                        <label for="Specialization" class="namespc py-4">Specialization:</label><br>
-                        <input type="text" [(ngModel)]="Specialization" name="Specialization" id="Specialization"
-                            class="inp">
-                        <button type="button" (click)="search()" class="button">Search</button>
-                    </form>
-                </div>
-                <div >
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>Doctor Id</th>
-                                <th>Doctor Name</th>
-                                <th>Doctor Email</th>
-                                <th>Doctor Phone</th>
-                                <th>Doctor Specialization</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <ng-container *ngFor="let item of Doctors">
-                                <tr>
-                                    <td>{{item.id}}</td>
-                                    <td>{{item.firstName}}</td>
-                                    <td>{{item.email}}</td>
-                                    <td>{{item.phone}}</td>
-                                    <td>{{item.specialization}}</td>
-                                </tr>
-                            </ng-container>
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
+            
 
 
 
-            <!-- <h2>Employee List</h2><br>
+            <h2>Employee List</h2><br>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -116,9 +68,10 @@
   
                     </tbody>
                 </table>
-            </div> -->
+            </div>
 
-        <ng-container *ngIf="role === 'Admin'">
+        <!-- <ng-container *ngIf="role === 'Admin'"> -->
+        <ng-container>
             <p>pending doctor</p>
                 <div >
                     <table class="custom-table bg-light">
@@ -143,8 +96,8 @@
                                     <td>{{item.phone}}</td>
                                     <td>{{item.specialization}}</td>
                                     <td>{{item.experience}}</td>
-                                    <!-- <td><a class="px-2 py-1 checks" (click)="addpendoctor()"><span class="fa fa-check"></span> </a></td>
-                                    <td><a class="px-2 py-1 deletes" (click)="deletependoctor()"><span class="fa fa-trash"></span> </a></td> -->
+                                    <td><a class="px-2 py-1 checks" (click)="addpendoctor(item)"><span class="fa fa-check"></span> </a></td>
+                                    <td><a class="px-2 py-1 deletes" (click)="deletependoctor(item)"><span class="fa fa-trash"></span> </a></td>
                                 </tr>
                             </ng-container>
                         </tbody>
@@ -175,7 +128,7 @@
                                     <td>{{item.phone}}</td>
                                     <td>{{item.specialization}}</td>
                                     <td>{{item.experience}}</td>
-                                    <!-- <td><a class="px-2 py-1 deletes" (click)="deletependoctor()"><span class="fa fa-trash"></span> </a></td> -->
+                                    <td><a class="px-2 py-1 deletes" (click)="deleteapproveddoctor(item)"><span class="fa fa-trash"></span> </a></td>
                                 </tr>
                             </ng-container>
                         </tbody>

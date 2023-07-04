@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { AdminapiService } from 'src/app/Services/adminapi.service';
 import { AdminauthService } from 'src/app/Services/adminauth.service';
 import { AdminstoreService } from 'src/app/Services/adminstore.service';
@@ -20,7 +22,8 @@ export class AdmindoctordashboardComponent implements OnInit {
   public approveddoctor: any[] = [];
 
   public fullName: string = "";
-  constructor(private api: AdminapiService, private auth: AdminauthService, private userStore: AdminstoreService, private formbuilder: FormBuilder) { }
+  constructor(private api: AdminapiService, private auth: AdminauthService, private userStore: AdminstoreService, private toast:NgToastService
+    ) { }
 
   ngOnInit() {
 
@@ -57,58 +60,31 @@ export class AdmindoctordashboardComponent implements OnInit {
       this.approveddoctor = result)
   }
 
-  selectedDoctor: any; // Variable to store the selected doctor
+    id!:number;
+    
+  public addpendoctor(item:any)
+  {
+    console.log(item);
+    const {id, ...item1} = item;
+    this.api.addtoapprovedoctor(item1).subscribe(res=>{
+      this.toast.success({detail:"Doctor Apporoved", summary:res.message, duration: 3000});
+      window.location.reload();
+    })    
+    this.api.deletependingdoctorid(item.id).subscribe(res1=>{
+      console.log("approved and deleted!");
+    });
+  }
 
-  // addpendoctor(): void {
-  //   if (this.selectedDoctor) {
-  //     this.api.addtoapprovedoctor(this.selectedDoctor).subscribe(
-  //       (response: any) => {
-  //         console.log('Doctor added successfully:', response);
-  //         this.pendingdtr.push(this.selectedDoctor);
-  //       },
-  //       (error: any) => {
-  //         console.error('Failed to add doctor:', error);
-  //       }
-  //     );
-  //   }
-  // }
+  public deletependoctor(item:any){
+    this.api.deletependingdoctorid(item.id).subscribe(res=>{
+      this.toast.warning({detail:"Doctor Declined",summary:res.message,duration:3000});
+      window.location.reload();
+    })
+  }
 
-  // deletependoctor(): void {
-  //   if (this.selectedDoctor) {
-  //     this.api.deletependingdoctorid(this.selectedDoctor.id).subscribe(
-  //       (response: any) => {
-  //         console.log('Doctor deleted successfully:', response);
-  //         this.pendingdtr = this.pendingdtr.filter((doctor) => doctor.id !== this.selectedDoctor.id);
-  //       },
-  //       (error: any) => {
-  //         console.error('Failed to delete doctor:', error);
-  //       }
-  //     );
-  //   }
-  // }
+  public deleteapproveddoctor(item:any){
+    this.api.deleteapprovedoctorid(item.id).subscribe((res)=>{alert("Apporved doctor deleted");},(error)=>{alert("error in Apporved doctor delete");})
 
-
-
-  // public addpendoctor(doctor:any):void{
-  //   this.api.addtoapprovedoctor(doctor).subscribe({
-  //     next:(res)=>{
-  //       console.log(res);
-  //       alert("added successfully");
-  //     }
-  //   })
-  // }
-
-
-
-  // private showpendingdoctor():void{
-  //   this.pendingform = this.formbuilder.group({
-  //     hotelId: [],
-  //     hotelName: [],
-  //     hotelDescription:[],
-  //     hotelRoomPrice: [],
-  //     hotelRoomsAvailable: [],
-  //     hotelLocation: []
-  //    });
-  // }
+  }
 
 }

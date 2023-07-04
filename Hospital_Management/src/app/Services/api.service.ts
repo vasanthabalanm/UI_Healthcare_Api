@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private baseUrl: string = 'https://localhost:7254/api/Admin/Approved';
+  private baseUrl: string = 'https://localhost:7254/api/Admin/GetRolesOfDoctors';
   constructor(private http: HttpClient) {}
 
   getUsers() {

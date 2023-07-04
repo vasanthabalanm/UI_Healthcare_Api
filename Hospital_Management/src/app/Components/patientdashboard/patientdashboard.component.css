@@ -78,7 +78,7 @@ body{
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .box8{
-    margin-top: 10px;
+    margin-top: 18px;
     background: #0392cf;
     border-radius: 20px;
     width: 50px;
@@ -86,7 +86,7 @@ body{
     position: relative;
 }
 .sendimg{
-    margin-top:50px;
+    margin-top:55px;
 }
 .lable{
     color: #0392ce;
@@ -133,7 +133,7 @@ body{
   .namespc{
     text-transform: uppercase;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .inp{
     border-radius: 5px;
@@ -199,5 +199,39 @@ input[type='password'] {
     box-shadow: none;
     width: 100%
 } */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    max-height: 100px; /* Set the maximum height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 190px;
+  }
+  
+  li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent line breaks within suggestions */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+  }
+  
+  li:hover {
+    background-color: #e9e9e9;
+  }
+  .cardimges{
+    width: 180px;
+    height: 230px;
+  }
+
+  
+  
+
+
+
+
+
   
   
