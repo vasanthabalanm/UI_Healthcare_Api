@@ -4,7 +4,7 @@ import { ApiService } from 'src/app/Services/api.service';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PatientstoreService } from 'src/app/Services/patientstore.service';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 import { Router } from '@angular/router';
 
@@ -22,7 +22,8 @@ export class PatientdashboardComponent implements OnInit {
    public added:any[]=[];
    public Appointmentform!:FormGroup;
 
-
+   public appointmentForms!:FormGroup;
+  
   fullName! : string;
   constructor(private api : ApiService, private auth: AuthService, private userStore: PatientstoreService,private http: HttpClient,private formbuilder : FormBuilder,private toast:NgToastService,private router :Router) { }
 
@@ -32,6 +33,19 @@ export class PatientdashboardComponent implements OnInit {
     // .subscribe(res=>{
     // this.Doctors = res;
     // });
+    
+    this.appointmentForms = this.formbuilder.group({
+      id:['', Validators.required],
+      date:['', Validators.required],
+      location:['', Validators.required],
+      gender:['', Validators.required],
+      problem:['', Validators.required],
+      phone: ['', Validators.required]
+    })
+
+    this.initializeForm();
+
+    
     this.starttemplate();
 
     this.userStore.getRoleFromStore()
@@ -108,5 +122,24 @@ export class PatientdashboardComponent implements OnInit {
     console.log('Submitted specialty:', this.Specialization);
     // Add your code to handle the form submission logic
   }
+
+  initializeForm(): void {
+    this.appointmentForms = this.formbuilder.group({
+      id: [],
+      date: ['', Validators.required],
+      phone: ['', Validators.required],
+      location: ['', Validators.required],
+      gender: ['', Validators.required],
+      problem: ['', Validators.required]
+    });
+  }
+
+  bookAppointment(): void {
+    // Handle the booking logic here
+    this.api.AddAppointments(this.appointmentForms.value).subscribe(res=>{
+      this.toast.success({detail:"Appointment added", summary:res.message, duration: 2000});
+    })
+  }
+
 
 }

@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class AdminapiService {
 
-  // private baseUrl: string = 'https://localhost:7254/api/Admin';
   constructor(private http: HttpClient) {}
 
   getpatienr() {
@@ -29,8 +28,20 @@ export class AdminapiService {
     return this.http.get(`https://localhost:7254/api/Admin/GetRolesOfDoctors`)
   }
 
- 
   public deleteapprovedoctorid(id: number): Observable<any> {
     return this.http.delete(`https://localhost:7254/api/Admin/delete_approved_Doctor/${id}`);
   }
+
+  getappointdetail(username: string, email: string) {
+    const queryParams = `?doctorName=${username}&doctorEmail=${email}`;
+    return this.http.get(`https://localhost:7254/api/Admin/appointments_Doctors${queryParams}`);
+    
+  }
+
+
+
+  public updatedoctor(id: number, custs: any) {
+    return this.http.put(`https://localhost:7254/api/Admin/Doctorareupdate/`+id,custs);
+  }
+  
 }

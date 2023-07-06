@@ -23,6 +23,43 @@
                 <a class="px-4 py-1 login" [routerLink]="['patientlogin']">Login</a> &nbsp;
                 <a class="px-4 py-1 signup" [routerLink]="['patientsignup']">Sign-up</a>
             </div>
+
+            <div class="menu">
+              <nav class="navbar  fixed-top">
+                <div class="container-fluid menus">
+                  <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                   
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#about" class="px-3 py-1">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#finddoctor" class="px-3 py-1">Find Doctor</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#findmedicals" class="px-3 py-1">Find Medicals</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#contact" class="px-3 py-1">Contact-us</a>
+                        </li>
+        
+                      </ul>
+                      <form class="d-flex mt-3" role="search">
+                          <a class="px-4 py-1 login" [routerLink]="['patientlogin']">Login</a> &nbsp;
+                          <a class="px-4 py-1 signup" [routerLink]="['patientsignup']">Sign-up</a>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
             
   </div>
 
@@ -59,7 +96,7 @@
   </div>   
   <section class="position-relative section1 container" id="home">
 
-        <div class="row "><h3 class=" sect1 py-5">our best doctors<hr></h3></div>
+        <div class="row "><h3 class=" sect1 py-5">our best doctors In<hr></h3></div>
         
         <div class="row px-5">
             <div class="col">
@@ -239,7 +276,7 @@
 
   <section class="section4 container pt-5" id="finddoctor">
         <div class="row "><h3 class=" text-center py-5">What Our Client Say<hr></h3></div>
-        <div class="row px-5">
+        <div class="row rows px-5">
             <div class="col">
                 <div class="card bg-light" style="width: 30rem;">
                     <p class="text-center pt-3"><img src="../../../assets/images/feeback.png" class="card-img-top" style="width: 70px;height: 70px;"></p>
@@ -340,7 +377,7 @@
                         </div>
                         <div class="faclt1">
                             <div class="card-body py-4">
-                                <h5 class="card-title">Specia Nurse</h5>
+                                <h5 class="card-title">Special Nurse</h5>
                                 <p class="card-text" style="font-size: 14px;color: gray;">Highly skilled and specialized nurse with expertise in a specific area of healthcare.</p>
                               </div>
                         </div>
@@ -367,7 +404,7 @@
   <footer id="contact" class="bg-dark">
         <div class="foter">
           <div class="container fotr ">
-            <div class="row py-5">
+            <div class=" row py-5">
               <div class="col-1"></div>
               <div class="col"><strong style="text-decoration: underline;">About</strong><br><br>
                 <a href="">About Us</a><br>

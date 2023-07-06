@@ -98,11 +98,6 @@ img {
 }
 
 
-/* a[target='_blank'] {
-  position: relative;
-  transition: all 0.1s ease-in-out
-} */
-
 .bordert {
     border-top: 1px solid #aaa;
     position: relative

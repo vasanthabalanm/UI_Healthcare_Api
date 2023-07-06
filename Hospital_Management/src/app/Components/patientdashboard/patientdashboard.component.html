@@ -144,9 +144,97 @@
                     <div class="card" style="width: 13rem;">
                         <p class="text-center pt-4"><img src="../../../assets/images/book1.png" class="card-img-top cardimges" alt="Card Image"></p>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Doctor1</h5>
-                            <p class="card-text"></p>
-                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                            <h5 class="card-title text-center">Dr.Narayanan</h5>
+                            <p class="card-text text-center">ENT</p>
+                            <div>
+                              <!-- Button trigger modal -->
+                              <p class="text-center"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Book appointment
+                              </button></p>
+                            
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter for Book, your appointment</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form [formGroup]="appointmentForms" (ngSubmit)="bookAppointment()">
+                            
+                                        <div class="form-group" style="display: none;">
+                                          <label for="id" class="label">DoctorId:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')">
+                                            <input type="text" id="id" class="form-control" name="id" 
+                                              placeholder="Enter Doctor Id" value="2" disabled >
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')"
+                                            class="text-danger">*DoctorID is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="date" class="label">Date:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')">
+                                            <input type="date" id="date" class="form-control" name="date" formControlName="date"
+                                              placeholder="Enter the appointment date">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')"
+                                            class="text-danger">*Date is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="phone" class="label">Phone:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')">
+                                            <input type="text" id="phone" class="form-control" name="phone" formControlName="phone"
+                                              placeholder="+91 xxxxxxxxxx">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')"
+                                            class="text-danger">*Phone number is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="location" class="label">Location:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')">
+                                            <input type="text" id="location" class="form-control" name="location" formControlName="location"
+                                              placeholder="Enter your location">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')"
+                                            class="text-danger">*Location is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="gender" class="label">Gender:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')">
+                                            <input type="text" id="gender" class="form-control" name="gender" formControlName="gender"
+                                              placeholder="Enter your gender">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')"
+                                            class="text-danger">*Gender is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="problem" class="label">Problem:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')">
+                                            <input type="text" id="problem" class="form-control" name="problem" formControlName="problem"
+                                              placeholder="Enter your problem">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')"
+                                            class="text-danger">*Problem is required*</small>
+                                        </div>
+                            
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-primary" [disabled]="appointmentForms.invalid">Confirm Book</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                              
                         </div>
                     </div>
                 </div>
@@ -154,28 +242,290 @@
                     <div class="card" style="width: 13rem;">
                         <p class="text-center pt-4"><img src="../../../assets/images/book2.png" class="card-img-top cardimges" alt="Card Image"></p>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Doctor1</h5>
-                            <p class="card-text"></p>
-                            <p class="text-center"><a href="#" class="btn btn-dark ">Book Appointment</a></p>
-                        </div>
+                            <h5 class="card-title text-center">Dr.Balan</h5>
+                            <p class="card-text text-center">Brain </p>
+                          <div>
+                              <!-- Button trigger modal -->
+                              <p class="text-center"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Book appointment
+                              </button></p>
+                            
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter for Book, your appointment</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form [formGroup]="appointmentForms" (ngSubmit)="bookAppointment()">
+                            
+                                        <div class="form-group" style="display: none;">
+                                          <label for="id" class="label">DoctorId:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')">
+                                            <input type="text" id="id" class="form-control" name="id" 
+                                              placeholder="Enter Doctor Id" value="2" disabled >
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')"
+                                            class="text-danger">*DoctorID is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="date" class="label">Date:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')">
+                                            <input type="date" id="date" class="form-control" name="date" formControlName="date"
+                                              placeholder="Enter the appointment date">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')"
+                                            class="text-danger">*Date is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="phone" class="label">Phone:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')">
+                                            <input type="text" id="phone" class="form-control" name="phone" formControlName="phone"
+                                              placeholder="+91 xxxxxxxxxx">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')"
+                                            class="text-danger">*Phone number is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="location" class="label">Location:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')">
+                                            <input type="text" id="location" class="form-control" name="location" formControlName="location"
+                                              placeholder="Enter your location">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')"
+                                            class="text-danger">*Location is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="gender" class="label">Gender:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')">
+                                            <input type="text" id="gender" class="form-control" name="gender" formControlName="gender"
+                                              placeholder="Enter your gender">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')"
+                                            class="text-danger">*Gender is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="problem" class="label">Problem:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')">
+                                            <input type="text" id="problem" class="form-control" name="problem" formControlName="problem"
+                                              placeholder="Enter your problem">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')"
+                                            class="text-danger">*Problem is required*</small>
+                                        </div>
+                            
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-primary" [disabled]="appointmentForms.invalid">Confirm Book</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                        
+                          </div>
                     </div>
                 </div>
                 <div class="col-sm-5 col-md-3">
                     <div class="card" style="width: 13rem;">
                         <p class="text-center pt-4"><img src="../../../assets/images/book3.png" class="card-img-top cardimges" alt="Card Image"></p>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Doctor1</h5>
-                            <p class="card-text"></p>
-                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                            <h5 class="card-title text-center">Dr.Venkat</h5>
+                            <p class="card-text text-center">Heart Specialist</p>
+                            <div>
+                              <!-- Button trigger modal -->
+                              <p class="text-center"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Book appointment
+                              </button></p>
+                            
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter for Book, your appointment</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form [formGroup]="appointmentForms" (ngSubmit)="bookAppointment()">
+                            
+                                        <div class="form-group" style="display: none;">
+                                          <label for="id" class="label">DoctorId:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')">
+                                            <input type="text" id="id" class="form-control" name="id" 
+                                              placeholder="Enter Doctor Id" value="2" disabled >
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')"
+                                            class="text-danger">*DoctorID is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="date" class="label">Date:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')">
+                                            <input type="date" id="date" class="form-control" name="date" formControlName="date"
+                                              placeholder="Enter the appointment date">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')"
+                                            class="text-danger">*Date is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="phone" class="label">Phone:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')">
+                                            <input type="text" id="phone" class="form-control" name="phone" formControlName="phone"
+                                              placeholder="+91 xxxxxxxxxx">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')"
+                                            class="text-danger">*Phone number is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="location" class="label">Location:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')">
+                                            <input type="text" id="location" class="form-control" name="location" formControlName="location"
+                                              placeholder="Enter your location">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')"
+                                            class="text-danger">*Location is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="gender" class="label">Gender:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')">
+                                            <input type="text" id="gender" class="form-control" name="gender" formControlName="gender"
+                                              placeholder="Enter your gender">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')"
+                                            class="text-danger">*Gender is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="problem" class="label">Problem:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')">
+                                            <input type="text" id="problem" class="form-control" name="problem" formControlName="problem"
+                                              placeholder="Enter your problem">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')"
+                                            class="text-danger">*Problem is required*</small>
+                                        </div>
+                            
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-primary" [disabled]="appointmentForms.invalid">Confirm Book</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div><div class="col-sm-5 col-md-3">
                     <div class="card" style="width: 13rem;">
                         <p class="text-center pt-4"><img src="../../../assets/images/book4.jpg" class="card-img-top cardimges" alt="Card Image"></p>
                         <div class="card-body">
-                            <h5 class="card-title text-center">Doctor1</h5>
-                            <p class="card-text"></p>
-                            <p class="text-center"><a href="#" class="btn btn-dark">Book Appointment</a></p>
+                            <h5 class="card-title text-center">Dr. Saghyarani</h5>
+                            <p class="card-text text-center">Child</p>
+
+                            <div>
+                              <!-- Button trigger modal -->
+                              <p class="text-center"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Book appointment
+                              </button></p>
+                            
+                              <!-- Modal -->
+                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter for Book, your appointment</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form [formGroup]="appointmentForms" (ngSubmit)="bookAppointment()">
+                            
+                                        <div class="form-group" style="display: none;">
+                                          <label for="id" class="label">DoctorId:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')">
+                                            <input type="text" id="id" class="form-control" name="id" 
+                                              placeholder="Enter Doctor Id" value="2" disabled >
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['id'].dirty && appointmentForms.hasError('required','id')"
+                                            class="text-danger">*DoctorID is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="date" class="label">Date:</label> <br>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')">
+                                            <input type="date" id="date" class="form-control" name="date" formControlName="date"
+                                              placeholder="Enter the appointment date">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['date'].dirty && appointmentForms.hasError('required','date')"
+                                            class="text-danger">*Date is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="phone" class="label">Phone:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')">
+                                            <input type="text" id="phone" class="form-control" name="phone" formControlName="phone"
+                                              placeholder="+91 xxxxxxxxxx">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['phone'].dirty && appointmentForms.hasError('required','phone')"
+                                            class="text-danger">*Phone number is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="location" class="label">Location:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')">
+                                            <input type="text" id="location" class="form-control" name="location" formControlName="location"
+                                              placeholder="Enter your location">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['location'].dirty && appointmentForms.hasError('required','location')"
+                                            class="text-danger">*Location is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="gender" class="label">Gender:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')">
+                                            <input type="text" id="gender" class="form-control" name="gender" formControlName="gender"
+                                              placeholder="Enter your gender">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['gender'].dirty && appointmentForms.hasError('required','gender')"
+                                            class="text-danger">*Gender is required*</small>
+                                        </div>
+                            
+                                        <div class="form-group">
+                                          <label for="problem" class="label">Problem:</label>
+                                          <div class="input-field" [class.error]="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')">
+                                            <input type="text" id="problem" class="form-control" name="problem" formControlName="problem"
+                                              placeholder="Enter your problem">
+                                          </div>
+                                          <small *ngIf="appointmentForms.controls['problem'].dirty && appointmentForms.hasError('required','problem')"
+                                            class="text-danger">*Problem is required*</small>
+                                        </div>
+                            
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-primary" [disabled]="appointmentForms.invalid">Confirm Book</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,7 +641,6 @@
 
     </section>
 
-
     <section class="container pt-5" >
         <div class="row "><h3 class=" sect1 py-5">Our Services<hr></h3></div>
 
@@ -366,7 +715,7 @@
                         </div>
                         <div class="faclt1">
                             <div class="card-body py-4">
-                                <h5 class="card-title">Specia Nurse</h5>
+                                <h5 class="card-title">Special Nurse</h5>
                                 <p class="card-text" style="font-size: 14px;color: gray;">Highly skilled and specialized nurse with expertise in a specific area of healthcare.</p>
                               </div>
                         </div>

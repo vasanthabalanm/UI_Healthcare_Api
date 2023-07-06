@@ -26,7 +26,7 @@ export class AdmindoctordashboardComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-
+    
     this.showpendingdoctor();
     this.approvingdoctors();
     this.api.getpatienr()
@@ -66,10 +66,12 @@ export class AdmindoctordashboardComponent implements OnInit {
   {
     console.log(item);
     const {id, ...item1} = item;
-    this.api.addtoapprovedoctor(item1).subscribe(res=>{
-      this.toast.success({detail:"Doctor Apporoved", summary:res.message, duration: 3000});
-      window.location.reload();
-    })    
+    this.api.addtoapprovedoctor(item1).subscribe(res => {
+      this.toast.success({ detail: "Doctor Approved", summary: res.message, duration: 3000 });
+      setTimeout(function() {
+        window.location.reload();
+      }, 4000);
+    });   
     this.api.deletependingdoctorid(item.id).subscribe(res1=>{
       console.log("approved and deleted!");
     });
@@ -86,5 +88,35 @@ export class AdmindoctordashboardComponent implements OnInit {
     this.api.deleteapprovedoctorid(item.id).subscribe((res)=>{alert("Apporved doctor deleted");},(error)=>{alert("error in Apporved doctor delete");})
 
   }
+
+  
+ Updatedoctorbyid()
+  {
+    return this.api.updatedoctor(this.id,this.DocUpdate).subscribe(
+      (result)=> {
+        // console.log(result)
+        this.toast.success({ detail: "Doctor updated", duration: 3000 });
+        setTimeout(function() {
+          window.location.reload();
+        }, 4000);
+      }
+      
+      );
+  }
+  public Docid!: any;
+  DocUpdate:any = { experience : '',phone:''};
+
+  username: string = '';
+  email: string = '';
+  appointmnts!:any;
+
+  check() {
+   return this.api.getappointdetail(this.username, this.email)
+      .subscribe((response) => {
+        this.appointmnts = response;
+      });
+  }
+
+
 
 }
